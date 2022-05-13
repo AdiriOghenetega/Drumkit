@@ -1,0 +1,58 @@
+html {
+  font-size: large;
+  background: url("./background.jpg") center;
+  background-size: cover;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+body .keys {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 150px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 100%;
+}
+
+body .keys .key {
+  border: 4px solid black;
+  border-radius: 5px;
+  padding: 3px;
+  width: 85px;
+  text-align: center;
+  -webkit-transition: all 0.07s;
+  transition: all 0.07s;
+  text-shadow: 0 0 5px black;
+}
+
+body .keys .key h1 {
+  color: white;
+}
+
+body .keys .key p {
+  color: #ffc600;
+}
+
+body .keys .playing {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  border-color: #ffc630;
+  -webkit-box-shadow: 0 0 10px #ffc600;
+          box-shadow: 0 0 10px #ffc600;
+}
+
+footer {
+  font-size: small;
+  margin-left: 45%;
+  width: auto;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  color: #ffc600;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+/*# sourceMappingURL=file.css.map */
