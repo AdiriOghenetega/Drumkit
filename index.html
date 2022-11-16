@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1a">
     <title>Javascript Drumkit</title>
     <link rel="stylesheet" href="file.css">
-    <script src="./file.js"></script>
 </head>
 <body>
     <div class="keys" >
-        <div data-key="65" class="key ">
+        <div data-key="65" class="key" id="65">
             <H1>
                 A
             </H1>
@@ -18,7 +17,7 @@
                 CLAP
             </p>
         </div>
-        <div data-key="83" class="key">
+        <div data-key="83" class="key" id="83">
             <H1>
                 S
             </H1>
@@ -26,7 +25,7 @@
                 HIHAT
             </p>
         </div>
-        <div data-key="68" class="key">
+        <div data-key="68" class="key" id="68">
             <H1>
                 D
             </H1>
@@ -34,7 +33,7 @@
                 KICK
             </p>
         </div>
-        <div data-key="70" class="key">
+        <div data-key="70" class="key" id="70">
             <H1>
                 F
             </H1>
@@ -42,7 +41,7 @@
                 OPENHAT
             </p>
         </div>
-        <div data-key="71" class="key">
+        <div data-key="71" class="key" id="71">
             <H1>
                 G
             </H1>
@@ -50,7 +49,7 @@
                 BOOM
             </p>
         </div>
-        <div data-key="72" class="key">
+        <div data-key="72" class="key" id="72">
             <H1>
                 H
             </H1>
@@ -58,7 +57,7 @@
                 RIDE
             </p>
         </div>
-        <div data-key="74" class="key">
+        <div data-key="74" class="key" id="74">
             <H1>
                 J
             </H1>
@@ -66,7 +65,7 @@
                 SNARE
             </p>
         </div>
-        <div data-key="75" class="key">
+        <div data-key="75" class="key" id="75">
             <H1>
                 K
             </H1>
@@ -74,7 +73,7 @@
                 TOM
             </p>
         </div>
-        <div data-key="76" class="key">
+        <div data-key="76" class="key" id="76">
             <H1>
                 L
             </H1>
@@ -104,9 +103,14 @@
         audio.play();
         const keys= document.querySelector(`.key[data-key="${e.keyCode}"]`);
         keys.classList.add('playing');
-        // setTimeout(function(e){
-        //     keys.classList.remove('playing')
-        // },70);
+    }
+    window.addEventListener("touchstart",playSoundOnClick)
+    function playSoundOnClick(event){
+        const audio = document.querySelector(`audio[data-key="${event.target.id}"]`)
+        audio.currentTime= 0;
+        audio.play();
+        const keys= document.querySelector(`.key[data-key="${event.target.id}"]`);
+        keys.classList.add('playing');
     }
 
     function endTransition(e){
